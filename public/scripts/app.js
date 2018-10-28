@@ -34,8 +34,9 @@ var template = React.createElement(
 );
 
 var app = {
-    title: 'Virotransport',
-    subtitle: 'Le moyen de connaître votre trajet le plus rapide'
+    title: 'Indecision App',
+    subtitle: 'Put your life in the hands of a computer',
+    options: ['One', 'Two']
 };
 
 var template = React.createElement(
@@ -46,10 +47,15 @@ var template = React.createElement(
         null,
         app.title
     ),
-    React.createElement(
-        'h4',
+    app.subtitle && React.createElement(
+        'p',
         null,
         app.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        app.options.length > 0 ? 'Here are your options' : 'no options'
     ),
     React.createElement(
         'ol',
@@ -57,18 +63,18 @@ var template = React.createElement(
         React.createElement(
             'li',
             null,
-            'Direction'
+            'Item one'
         ),
         React.createElement(
             'li',
             null,
-            'Point de d\xE9part'
+            'Item two'
         )
     )
 );
 
-var user = { name: 'Vincent Laforet',
-    age: 38
+var user = { name: 'John Doe',
+    age: 21
 
 };
 
@@ -89,15 +95,15 @@ var templateTwo = React.createElement(
     React.createElement(
         'h1',
         null,
-        user.name
+        user.name ? user.name : 'Unknown user'
     ),
-    React.createElement(
+    user.age >= 18 && React.createElement(
         'p',
         null,
-        'Age : ',
+        'Age: ',
         user.age
     ),
     getLocation(user.location)
 );
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

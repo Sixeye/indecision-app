@@ -14,23 +14,26 @@ var template = (
 );
 
 var app ={
-    title:'Virotransport',
-    subtitle: 'Le moyen de connaître votre trajet le plus rapide'
-}
+    title:'Indecision App',
+    subtitle: 'Put your life in the hands of a computer',
+    options: ['One', 'Two']
+};
 
 var template =(
     <div>
         <h1>{app.title}</h1>
-        <h4>{app.subtitle}</h4>
+        
+        {app.subtitle && <p>{app.subtitle}</p>}
+        <p>{app.options.length > 0 ? 'Here are your options' : 'no options'}</p>
         <ol>
-            <li>Direction</li>
-            <li>Point de départ</li>
+            <li>Item one</li>
+            <li>Item two</li>
         </ol>
     </div>
 )
 
-var user = {name: 'Vincent Laforet',
-age: 38,
+var user = { name: 'John Doe',
+age: 21,
 
 }
 
@@ -42,10 +45,11 @@ function getLocation(location) {
 
 var templateTwo= (
     <div>
-    <h1>{user.name}</h1>
-    <p>Age : {user.age}</p>
+    <h1>{user.name ? user.name : 'Unknown user'}</h1>
+    {
+        (user.age >= 18) && <p>Age: {user.age}</p>}
     {getLocation(user.location)}
     </div>
 )
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
