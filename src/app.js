@@ -13,9 +13,25 @@ var template = (
 </div>
 );
 
-var user = {name: 'Srinath Christopher Samarasinghe',
+var app ={
+    title:'Virotransport',
+    subtitle: 'Le moyen de connaître votre trajet le plus rapide'
+}
+
+var template =(
+    <div>
+        <h1>{app.title}</h1>
+        <h4>{app.subtitle}</h4>
+        <ol>
+            <li>Direction</li>
+            <li>Point de départ</li>
+        </ol>
+    </div>
+)
+
+var user = {name: 'Vincent Laforet',
 age: 40,
-location: 'Montréal, Canada'
+location: '50 rue Rieussec, 78220 Viroflay'
 }
 
 var templateTwo= (
@@ -26,4 +42,4 @@ var templateTwo= (
     </div>
 )
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

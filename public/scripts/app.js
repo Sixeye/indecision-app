@@ -33,9 +33,43 @@ var template = React.createElement(
     )
 );
 
-var user = { name: 'Srinath Christopher Samarasinghe',
+var app = {
+    title: 'Virotransport',
+    subtitle: 'Le moyen de connaître votre trajet le plus rapide'
+};
+
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        app.title
+    ),
+    React.createElement(
+        'h4',
+        null,
+        app.subtitle
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'Direction'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Point de d\xE9part'
+        )
+    )
+);
+
+var user = { name: 'Vincent Laforet',
     age: 40,
-    location: 'Montréal, Canada'
+    location: '50 rue Rieussec, 78220 Viroflay'
 };
 
 var templateTwo = React.createElement(
@@ -60,4 +94,4 @@ var templateTwo = React.createElement(
     )
 );
 var appRoot = document.getElementById('app');
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
